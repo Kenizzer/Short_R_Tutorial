@@ -1,7 +1,8 @@
 ---
-title: Starting with data
-author: Data Carpentry contributors
+title: "Starting with data"
+author: "Data Carpentry contributors"
 minutes: 20
+output: pdf_document
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}

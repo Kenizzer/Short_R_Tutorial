@@ -1,7 +1,8 @@
 ---
-title: Data visualization with ggplot2
-author: Data Carpentry contributors
+title: "Data visualization with ggplot2"
+author: "Data Carpentry contributors"
 minutes: 60
+output: pdf_document
 editor_options:
   chunk_output_type: console
 ---

@@ -1,6 +1,7 @@
 ---
-title: Manipulating, analyzing and exporting data with tidyverse
-author: Data Carpentry contributors
+title: "Manipulating, analyzing and exporting data with tidyverse"
+author: "Data Carpentry contributors"
+output: pdf_document
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
