@@ -2,7 +2,9 @@
 title: "Introduction to R"
 author: "Data Carpentry contributors"
 minutes: 45
-output: pdf_document
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
@@ -68,16 +70,8 @@ Objects can be given almost any name such as `x`, `current_temperature`, or `sub
 - You want your object names to be explicit and not too long.
 - They cannot start with a number (`2x` is not valid, but `x2` is).
 - R is case sensitive, so for example, `weight_kg` is different from `Weight_kg`.
-- There are some names that cannot be used because they are the names of fundamental functions in R (e.g., `if`, `else`, `for`, see
-  [here](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Reserved.html)
-  for a complete list). In general, even if it's allowed, it's best to not use
-  other function names (e.g., `c`, `T`, `mean`, `data`, `df`, `weights`). If in
-  doubt, check the help to see if the name is already in use.
 - It's best to avoid dots (`.`) within names. Many function names in R itself have them and dots also have a special meaning (methods) in R and other programming languages. To avoid confusion, don't include dots in names.
-- It is recommended to use nouns for object names and verbs for function names.
-- Be consistent in the styling of your code, such as where you put spaces, how you name objects, etc. Styles can include "lower\_snake", "UPPER\_SNAKE", "lowerCamelCase", "UpperCamelCase", etc. Using a consistent coding style makes your code clearer to read for your future self and your collaborators. In R, three popular style guides come from [Google](https://google.github.io/styleguide/Rguide.xml), [Jean
-  Fan](https://jef.works/R-style-guide/) and the
-  [tidyverse](https://style.tidyverse.org/). The tidyverse style is very comprehensive and may seem overwhelming at first. You can install the [**`lintr`**](https://github.com/jimhester/lintr) package to automatically check for issues in the styling of your code.
+- Be consistent in the styling of your code, such as where you put spaces, how you name objects, etc. Styles can include "lower\_snake", "UPPER\_SNAKE", "lowerCamelCase", "UpperCamelCase", etc. Using a consistent coding style makes your code clearer to read for your future self and your collaborators.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -634,9 +628,4 @@ length(heights_above_67)
 ##
 ## 3. Use R to figure out how many people in the set are taller than 67 inches.
 ```
-
-Now that we have learned how to write scripts, and the basics of R's data
-structures, we are ready to start working with the Portal dataset we have been
-using in the other lessons, and learn about data frames.
-
 
