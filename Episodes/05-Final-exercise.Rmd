@@ -103,7 +103,7 @@ kableExtra::kable(player_data_clean) %>%
 
 ### Converting columns to factors/numeric
 
-To facilitate easier plotting in ggplot, we need to convert some of the columns in the data frame to factors. We can use summary to view the current state of the dataframe. You will likely need to do things a bit differently depending on what sport/player you selected. Try to work through the process of converting the team and age to a factor and two stats to numeric.
+To facilitate easier plotting in ggplot, we need to convert some of the columns in the data frame to factors. We can use **`str()`** or **`summary()`** to view the current state of the data frame. You will likely need to do things a bit differently depending on what sport/player you selected. Try to work through the process of converting the team and age to a factor and two stats to numeric.
 ```{r, results="show", purl=FALSE}
 str(player_data_clean, list.len = 12)
 

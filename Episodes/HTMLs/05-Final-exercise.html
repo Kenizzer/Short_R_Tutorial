@@ -5583,11 +5583,13 @@ NA
 <div id="converting-columns-to-factorsnumeric" class="section level3">
 <h3>Converting columns to factors/numeric</h3>
 <p>To facilitate easier plotting in ggplot, we need to convert some of
-the columns in the data frame to factors. We can use summary to view the
-current state of the dataframe. You will likely need to do things a bit
-differently depending on what sport/player you selected. Try to work
-through the process of converting the team and age to a factor and two
-stats to numeric.</p>
+the columns in the data frame to factors. We can use
+<strong><code>str()</code></strong> or
+<strong><code>summary()</code></strong> to view the current state of the
+data frame. You will likely need to do things a bit differently
+depending on what sport/player you selected. Try to work through the
+process of converting the team and age to a factor and two stats to
+numeric.</p>
 <pre class="r"><code>str(player_data_clean, list.len = 12)</code></pre>
 <pre><code>#&gt; tibble [15 × 33] (S3: tbl_df/tbl/data.frame)
 #&gt;  $ Year    : chr [1:15] &quot;1979&quot; &quot;1980&quot; &quot;1981*&quot; &quot;1982&quot; ...
