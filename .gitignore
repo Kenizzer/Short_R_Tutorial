@@ -47,3 +47,5 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+AOE2_Example/AOE2_Example.R
+AOE2_Example/matches.parquet
