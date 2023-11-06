@@ -3810,7 +3810,7 @@ ggplot(data = player_data_clean, aes(x = Tm, y = TD)) +
   geom_col()
 ```
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+![](img/unnamed-chunk-10-1.png)<!-- -->
 
 #### Can we jazz it up a bit?
 
@@ -3823,7 +3823,7 @@ ggplot(data = player_data_clean, aes(x = Tm, y = TD, fill = Tm)) +
   theme_bw()
 ```
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+![](img/unnamed-chunk-11-1.png)<!-- -->
 
 ### Passing Yards by age
 
@@ -3832,7 +3832,7 @@ ggplot(data = player_data_clean, aes(x = Age, y = Passing_Yds)) +
   geom_col()
 ```
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+![](img/unnamed-chunk-12-1.png)<!-- -->
 
 ``` r
 # And the jazzed version
@@ -3844,7 +3844,7 @@ ggplot(data = player_data_clean, aes(x = Age, y = Passing_Yds, fill = Tm)) +
   theme_bw()
 ```
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-12-2.png)<!-- -->
+![](img/unnamed-chunk-12-2.png)<!-- -->
 
 #### Extra plot, Touchdowns by Games started with a trend line
 
@@ -3857,7 +3857,7 @@ ggplot(data = player_data_clean, aes(x = as.numeric(GS), y = TD, fill = Tm)) +
   theme_bw()
 ```
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](img/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 # Can we add a linear regression line for the relationship?
@@ -3871,7 +3871,7 @@ ggplot(data = player_data_clean, aes(x = as.numeric(GS), y = TD)) +
 
     #> `geom_smooth()` using formula = 'y ~ x'
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-13-2.png)<!-- -->
+![](img/unnamed-chunk-13-2.png)<!-- -->
 
 ### Bonus: Combining plots together
 
@@ -3910,8 +3910,8 @@ library(ggpubr)
 ggarrange(plot_1, plot_2)
 ```
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](img/unnamed-chunk-15-1.png)<!-- -->
 
 ##### Can you get to this plot using **`ggarrange()`** options?
 
-![](05-Final-exercise_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](img/unnamed-chunk-16-1.png)<!-- -->

@@ -3,10 +3,13 @@ title: 'Final Exercise: Putting together the pieces'
 author: "Joel Swift (KU)"
 minutes: 60
 output:
-    html_document:
-    df_print: paged
+    github_document:
+    #html_document:
+    #df_print: paged
+    
 editor_options:
   chunk_output_type: console
+always_allow_html: true
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
