@@ -77,7 +77,7 @@ Now we will load our player data, remember the name and format maybe a bit diffe
 player_data <- read_csv("data_raw/joe_montana.csv")
 ```
 
-```{r, results="show", echo= FALSE, purl=FALSE}
+```{r display-table, results="show", echo= FALSE, purl=FALSE}
 kableExtra::kable(player_data) %>%
   kableExtra::kable_styling("striped", full_width = F) %>%
   kableExtra::scroll_box(width = "100%", height = "200px")
@@ -92,13 +92,13 @@ First we will remove the few rows that do not contain data we want.
 
 We can easily remove the first column by checking whether ***Age*** is **NA** and removing columns that meet this criteria.The other columns come at the end of the data frame so we can use indexing to remove he last three rows.
 
-```{r, results="show", purl=FALSE}
+```{r data-cleaning, results="show", purl=FALSE}
 player_data$Age
 player_data <- player_data[!is.na(player_data$Age), ]
 player_data_clean <- player_data[-c(16,17,18),]
 ```
 
-```{r, results="show", echo= FALSE, purl=FALSE}
+```{r show-table-clean, results="show", echo= FALSE, purl=FALSE}
 kableExtra::kable(player_data_clean) %>%
   kableExtra::kable_styling("striped", full_width = F) %>%
   kableExtra::scroll_box(width = "100%", height = "200px")
@@ -107,7 +107,7 @@ kableExtra::kable(player_data_clean) %>%
 ### Converting columns to factors/numeric
 
 To facilitate easier plotting in ggplot, we need to convert some of the columns in the data frame to factors. We can use **`str()`** or **`summary()`** to view the current state of the data frame. You will likely need to do things a bit differently depending on what sport/player you selected. Try to work through the process of converting the team and age to a factor and two stats to numeric.
-```{r, results="show", purl=FALSE}
+```{r convert-factors, results="show", purl=FALSE}
 str(player_data_clean, list.len = 12)
 
 # Convert team and age to factors
@@ -126,14 +126,14 @@ Lets start by thinking about what kind of plot might make sense for the type of 
 
 ### Touchdowns by team
 
-```{r, results="show", purl=FALSE}
+```{r touchdown-by-team-plot, results="show", purl=FALSE}
 ggplot(data = player_data_clean, aes(x = Tm, y = TD)) +
   geom_col()
 ```
 
 #### Can we jazz it up a bit?
 
-```{r, results="show", purl=FALSE}
+```{r nicer-touchdown-by-team-plot, results="show", purl=FALSE}
 ggplot(data = player_data_clean, aes(x = Tm, y = TD, fill = Tm)) +
   geom_col() +
   xlab("Team") +
@@ -145,7 +145,7 @@ ggplot(data = player_data_clean, aes(x = Tm, y = TD, fill = Tm)) +
 
 ### Passing Yards by age
 
-```{r, results="show", purl=FALSE}
+```{r passing-yards-by-age-plot, results="show", purl=FALSE}
 ggplot(data = player_data_clean, aes(x = Age, y = Passing_Yds)) +
   geom_col()
 
@@ -161,7 +161,7 @@ ggplot(data = player_data_clean, aes(x = Age, y = Passing_Yds, fill = Tm)) +
 
 #### Extra plot, Touchdowns by Games started with a trend line
 
-```{r, results="show", purl=FALSE}
+```{r extra-plots, results="show", purl=FALSE}
 ggplot(data = player_data_clean, aes(x = as.numeric(GS), y = TD, fill = Tm)) +
   geom_point(shape = 21, size = 5) +
   xlab("Games Started") +
@@ -186,7 +186,7 @@ Often in a manuscript we would like to have multiple panels to a figure denoted 
 
 
 We first must save our plots to objects.
-```{r}
+```{r saving plots, purl=FALSE}
 
 plot_1 <- ggplot(data = player_data_clean, aes(x = Age, y = Passing_Yds, fill = Tm)) +
   geom_col() +
@@ -206,7 +206,7 @@ plot_2 <- ggplot(data = player_data_clean, aes(x = Tm, y = TD, fill = Tm)) +
 
 
 Next we need to load the **`ggpubr`** package and use the **`ggarrange()`** function. Try to utilize the help page for **`ggarrange()`** to figure out what options to include.
-```{r}
+```{r ggpubr-package, results="show", purl=FALSE}
 library(ggpubr)
 
 # Basic example
@@ -214,7 +214,7 @@ ggarrange(plot_1, plot_2)
 ```
 
 ##### Can you get to this plot using  **`ggarrange()`** options?
-```{r, echo=FALSE}
+```{r final-challenge-plot-arranged, echo=FALSE}
 # Basic example
 ggarrange(plot_1, plot_2, common.legend = TRUE, labels = "AUTO", legend = 'right')
 ```

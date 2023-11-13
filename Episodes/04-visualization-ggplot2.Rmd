@@ -158,54 +158,6 @@ surveys_plot
   + geom_point()
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-### Challenge (optional)
-
-Scatter plots can be useful exploratory tools for small datasets. For data
-sets with large numbers of observations, such as the `surveys_complete` data
-set, overplotting of points can be a limitation of scatter plots. One strategy
-for handling such settings is to use hexagonal binning of observations. The
-plot space is tessellated into hexagons. Each hexagon is assigned a color
-based on the number of observations that fall within its boundaries.  To use
-hexagonal binning with **`ggplot2`**, first install the R package `hexbin`
-from CRAN:
-
-```{r, eval=FALSE}
-install.packages("hexbin")
-library(hexbin)
-```
-
-Then use the `geom_hex()` function:
-
-```{r, eval=FALSE}
-surveys_plot +
- geom_hex()
-```
-
-- What are the relative strengths and weaknesses of a hexagonal bin plot
-  compared to a scatter plot? Examine the above scatter plot and compare it
-  with the hexagonal bin plot that you created.
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-```{r hexbin-challenge, echo=FALSE, eval=FALSE, purl=TRUE}
-### Challenge with hexbin
-##
-## To use the hexagonal binning with **`ggplot2`**, first install the `hexbin`
-## package from CRAN:
-
-install.packages("hexbin")
-library(hexbin)
-
-## Then use the `geom_hex()` function:
-
-surveys_plot +
-    geom_hex()
-
-## What are the relative strengths and weaknesses of a hexagonal bin
-## plot compared to a scatter plot?
-```
 
 ## Building your plots iteratively
 
@@ -305,7 +257,7 @@ a beanplot), where the shape (of the density of points) is drawn.
 
 :::::::: solution
 
-```{r, answer=TRUE, purl=FALSE}
+```{r boxplot-challenge-1, answer=TRUE, purl=FALSE}
 ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
 geom_jitter(alpha = 0.3, color = "tomato") +
 geom_violin() 
@@ -323,7 +275,7 @@ incrementally adding commands). Try making these modifications:
 
 :::::::: solution
 
-```{r, answer=TRUE, purl=FALSE}
+```{r boxplot-challenge-log-scale, answer=TRUE, purl=FALSE}
 ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +
 scale_y_log10() +
 geom_jitter(alpha = 0.3, color = "tomato") +
@@ -340,7 +292,7 @@ a new plot to explore the distribution of another variable within each species.
 
 :::::::: solution
 
-```{r, answer=TRUE, purl=FALSE}
+```{r boxplot-hindfoot-length-with-points, answer=TRUE, purl=FALSE}
 ggplot(data = surveys_complete, mapping = aes(x = species_id, y = hindfoot_length)) +
 geom_jitter(alpha = 0.3, color = "tomato") +
 geom_boxplot(outlier.shape = NA)
@@ -356,7 +308,7 @@ from integer to factor. Why does this change how R makes the graph?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-```{r boxplot-challenge, eval=FALSE, purl=TRUE, echo=FALSE}
+```{r boxplot-challenge-2, eval=FALSE, purl=TRUE, echo=FALSE}
 ## Challenge with boxplots:
 ##  Start with the boxplot we created:
 ggplot(data = surveys_complete, mapping = aes(x = species_id, y = weight)) +

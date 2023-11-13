@@ -142,37 +142,6 @@ surveys_plot
   + geom_point()
 ```
 
-<div class="challenge">
-
-### Challenge (optional)
-
-Scatter plots can be useful exploratory tools for small datasets. For
-data sets with large numbers of observations, such as the
-`surveys_complete` data set, overplotting of points can be a limitation
-of scatter plots. One strategy for handling such settings is to use
-hexagonal binning of observations. The plot space is tessellated into
-hexagons. Each hexagon is assigned a color based on the number of
-observations that fall within its boundaries. To use hexagonal binning
-with **`ggplot2`**, first install the R package `hexbin` from CRAN:
-
-``` r
-install.packages("hexbin")
-library(hexbin)
-```
-
-Then use the `geom_hex()` function:
-
-``` r
-surveys_plot +
- geom_hex()
-```
-
-- What are the relative strengths and weaknesses of a hexagonal bin plot
-  compared to a scatter plot? Examine the above scatter plot and compare
-  it with the hexagonal bin plot that you created.
-
-</div>
-
 ## Building your plots iteratively
 
 Building plots with **`ggplot2`** is typically an iterative process. We
@@ -290,7 +259,7 @@ geom_jitter(alpha = 0.3, color = "tomato") +
 geom_violin() 
 ```
 
-![](img/unnamed-chunk-9-1.png)<!-- -->
+![](img/boxplot-challenge-1-1.png)<!-- -->
 
 </div>
 
@@ -312,7 +281,7 @@ geom_jitter(alpha = 0.3, color = "tomato") +
 geom_boxplot(outlier.shape = NA)
 ```
 
-![](img/unnamed-chunk-10-1.png)<!-- -->
+![](img/boxplot-challenge-log-scale-1.png)<!-- -->
 
 </div>
 
@@ -331,7 +300,7 @@ geom_jitter(alpha = 0.3, color = "tomato") +
 geom_boxplot(outlier.shape = NA)
 ```
 
-![](img/unnamed-chunk-11-1.png)<!-- -->
+![](img/boxplot-hindfoot-length-with-points-1.png)<!-- -->
 
 </div>
 
