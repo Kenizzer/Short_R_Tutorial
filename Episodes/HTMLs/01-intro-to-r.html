@@ -1906,30 +1906,6 @@ tricky &lt;- c(1, 2, 3, &quot;4&quot;)</code></pre></li>
 content of this vector to find a “common denominator” that doesn’t lose
 any information.</p>
 </div>
-<ul>
-<li><p>How many values in <code>combined_logical</code> are
-<code>&quot;TRUE&quot;</code> (as a character) in the following example (reusing
-the 2 <code>..._logical</code>s from above):</p>
-<pre class="r"><code>combined_logical &lt;- c(num_logical, char_logical)</code></pre></li>
-</ul>
-<div class="solution">
-<p>Only one. There is no memory of past data types, and the coercion
-happens the first time the vector is evaluated. Therefore, the
-<code>TRUE</code> in <code>num_logical</code> gets converted into a
-<code>1</code> before it gets converted into <code>&quot;1&quot;</code> in
-<code>combined_logical</code>.</p>
-</div>
-<ul>
-<li>You’ve probably noticed that objects of different types get
-converted into a single, shared type within a vector. In R, we call
-converting objects from one class into another class <em>coercion</em>.
-These conversions happen according to a hierarchy, whereby some types
-get preferentially coerced into other types. Can you draw a diagram that
-represents the hierarchy of how these data types are coerced?</li>
-</ul>
-<div class="solution">
-<p>logical → numeric → character ← logical</p>
-</div>
 </div>
 </div>
 <div id="subsetting-vectors" class="section level2">
@@ -2000,18 +1976,6 @@ animals %in% c(&quot;rat&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;duck&quo
 animals[animals %in% c(&quot;rat&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;duck&quot;, &quot;goat&quot;, &quot;bird&quot;, &quot;fish&quot;)]</code></pre>
 <pre><code>#&gt; [1] &quot;rat&quot; &quot;dog&quot; &quot;cat&quot; &quot;cat&quot;</code></pre>
 </div>
-<div id="challenge-optional" class="section level3 challenge">
-<h3 class="challenge">Challenge (optional)</h3>
-<ul>
-<li>Can you figure out why <code>&quot;four&quot; &gt; &quot;five&quot;</code> returns
-<code>TRUE</code>?</li>
-</ul>
-<div class="solution">
-<p>When using “&gt;” or “&lt;” on strings, R compares their alphabetical
-order. Here “four” comes after “five”, and therefore is “greater than”
-it.</p>
-</div>
-</div>
 </div>
 <div id="missing-data" class="section level2">
 <h2>Missing data</h2>
@@ -2030,18 +1994,14 @@ max(heights)
 mean(heights, na.rm = TRUE)
 max(heights, na.rm = TRUE)</code></pre>
 <p>If your data include missing values, you may want to become familiar
-with the functions <code>is.na()</code>, <code>na.omit()</code>, and
-<code>complete.cases()</code>. See below for examples.</p>
+with the functions <code>is.na()</code> and <code>na.omit()</code>. See
+below for examples.</p>
 <pre class="r"><code>## Extract those elements which are not missing values.
 heights[!is.na(heights)]
 
 ## Returns the object with incomplete cases removed.
 #The returned object is an atomic vector of type `&quot;numeric&quot;` (or #`&quot;double&quot;`).
-na.omit(heights)
-
-## Extract those elements which are complete cases.
-#The returned object is an atomic vector of type `&quot;numeric&quot;` (or #`&quot;double&quot;`).
-heights[complete.cases(heights)]</code></pre>
+na.omit(heights)</code></pre>
 <p>Recall that you can use the <code>typeof()</code> function to find
 the type of your atomic vector.</p>
 <div id="challenge-2" class="section level3 challenge">
@@ -2064,8 +2024,6 @@ inches.</p></li>
 heights_no_na &lt;- heights[!is.na(heights)]
 # or
 heights_no_na &lt;- na.omit(heights)
-# or
-heights_no_na &lt;- heights[complete.cases(heights)]
 
 # 2.
 median(heights, na.rm = TRUE)

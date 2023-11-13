@@ -1,8 +1,11 @@
 ---
 title: "Data visualization with ggplot2"
-author: "Data Carpentry contributors"
+author: "Episode created by: Data Carpentry contributors with edits from Joel Swift (KU)"
 minutes: 60
-output: pdf_document
+output:
+    github_document:
+    #html_document:
+    #df_print: paged
 editor_options:
   chunk_output_type: console
 ---

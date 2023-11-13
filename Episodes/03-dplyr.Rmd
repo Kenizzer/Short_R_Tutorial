@@ -1,7 +1,10 @@
 ---
 title: "Manipulating, analyzing and exporting data with tidyverse"
-author: "Data Carpentry contributors"
-output: pdf_document
+author: "Episode created by: Data Carpentry contributors with edits from Joel Swift (KU)"
+output:
+    github_document:
+    #html_document:
+    #df_print: paged
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}

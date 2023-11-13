@@ -1,10 +1,11 @@
 ---
 title: "Introduction to R"
-author: "Data Carpentry contributors"
+author: "Episode created by: Data Carpentry contributors with edits from Joel Swift (KU)"
 minutes: 45
 output:
-  html_document:
-    df_print: paged
+    github_document:
+    #html_document:
+    #df_print: paged
 ---
 
 ```{r, echo=FALSE, purl=FALSE, message=FALSE}
@@ -378,36 +379,6 @@ denominator" that doesn't lose any information.
 
 ::::::::::::::::
 
-- How many values in `combined_logical` are `"TRUE"` (as a character) in the
-  following example (reusing the 2 `..._logical`s from above):
-  
-  ```r
-  combined_logical <- c(num_logical, char_logical)
-  ```
-
-::::::: solution
-
-Only one. There is no memory of past data types, and the coercion happens the
-first time the vector is evaluated. Therefore, the `TRUE` in `num_logical`
-gets converted into a `1` before it gets converted into `"1"` in
-`combined_logical`.
-
-::::::::::::::::
-
-- You've probably noticed that objects of different types get
-  converted into a single, shared type within a vector. In R, we
-  call converting objects from one class into another class
-  *coercion*. These conversions happen according to a hierarchy,
-  whereby some types get preferentially coerced into other
-  types. Can you draw a diagram that represents the hierarchy of how
-  these data types are coerced?
-
-::::::: solution
-
-logical → numeric → character ← logical
-
-::::::::::::::::
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ```{r, echo=FALSE, eval=FALSE, purl=TRUE}
@@ -520,26 +491,6 @@ animals %in% c("rat", "cat", "dog", "duck", "goat", "bird", "fish")
 animals[animals %in% c("rat", "cat", "dog", "duck", "goat", "bird", "fish")]
 ```
 
-:::::::::::::::::::::::::::::::::::::::  challenge
-
-### Challenge (optional){.challenge}
-
-- Can you figure out why `"four" > "five"` returns `TRUE`?
-
-::::::: solution
-
-When using ">" or "\<" on strings, R compares their alphabetical order.
-Here "four" comes after "five", and therefore is "greater than" it.
-
-::::::::::::::::
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-```{r, echo=FALSE, purl=TRUE}
-### Challenge (optional)
-##
-## * Can you figure out why `"four" > "five"` returns `TRUE`?
-```
 
 ## Missing data
 
@@ -562,7 +513,7 @@ max(heights, na.rm = TRUE)
 ```
 
 If your data include missing values, you may want to become familiar with the
-functions `is.na()`, `na.omit()`, and `complete.cases()`. See below for
+functions `is.na()` and `na.omit()`. See below for
 examples.
 
 ```{r, purl=FALSE}
@@ -573,9 +524,6 @@ heights[!is.na(heights)]
 #The returned object is an atomic vector of type `"numeric"` (or #`"double"`).
 na.omit(heights)
 
-## Extract those elements which are complete cases.
-#The returned object is an atomic vector of type `"numeric"` (or #`"double"`).
-heights[complete.cases(heights)]
 ```
 
 Recall that you can use the `typeof()` function to find the type of your atomic vector.
@@ -603,8 +551,6 @@ heights <- c(63, 69, 60, 65, NA, 68, 61, 70, 61, 59, 64, 69, 63, 63, NA, 72, 65,
 heights_no_na <- heights[!is.na(heights)]
 # or
 heights_no_na <- na.omit(heights)
-# or
-heights_no_na <- heights[complete.cases(heights)]
 
 # 2.
 median(heights, na.rm = TRUE)
