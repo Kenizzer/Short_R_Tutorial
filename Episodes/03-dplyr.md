@@ -68,18 +68,7 @@ package. If you haven’t already done so, you can type
 The package **`dplyr`** provides helper tools for the most common data
 manipulation tasks. It is built to work directly with data frames, with
 many common tasks optimized by being written in a compiled language
-(C++). An additional feature is the ability to work directly with data
-stored in an external database. The benefits of doing this are that the
-data can be managed natively in a relational database, queries can be
-conducted on that database, and only the results of the query are
-returned.
-
-This addresses a common problem with R in that all operations are
-conducted in-memory and thus the amount of data you can work with is
-limited by available memory. The database connections essentially remove
-that limitation in that you can connect to a database of many hundreds
-of GB, conduct queries on it directly, and pull back into R only what
-you need for analysis.
+(C++).
 
 The package **`tidyr`** addresses the common problem of wanting to
 reshape your data for plotting and usage by different R functions. For

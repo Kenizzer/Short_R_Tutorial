@@ -216,13 +216,6 @@ find other keyboard shortcuts in this [RStudio cheatsheet about the
 RStudio
 IDE](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf).
 
-At some point in your analysis you may want to check the content of a
-variable or the structure of an object, without necessarily keeping a
-record of it in your script. You can type these commands and execute
-them directly in the console. RStudio provides the <kbd>`Ctrl`</kbd> +
-<kbd>`1`</kbd> and <kbd>`Ctrl`</kbd> + <kbd>`2`</kbd> shortcuts allow
-you to jump between the script and the console panes.
-
 If R is ready to accept commands, the R console shows a `>` prompt. If
 it receives a command (by typing, copy-pasting or sent from the script
 editor using <kbd>`Ctrl`</kbd> + <kbd>`Enter`</kbd>), R will try to
@@ -370,11 +363,12 @@ problem and help others to pinpoint where the issue might be. Try to…
 sessionInfo()
 ```
 
-    #> R version 4.2.2 (2022-10-31 ucrt)
+    #> R version 4.3.1 (2023-06-16 ucrt)
     #> Platform: x86_64-w64-mingw32/x64 (64-bit)
-    #> Running under: Windows 10 x64 (build 22621)
+    #> Running under: Windows 10 x64 (build 19045)
     #> 
     #> Matrix products: default
+    #> 
     #> 
     #> locale:
     #> [1] LC_COLLATE=English_United States.utf8 
@@ -383,26 +377,28 @@ sessionInfo()
     #> [4] LC_NUMERIC=C                          
     #> [5] LC_TIME=English_United States.utf8    
     #> 
+    #> time zone: America/Chicago
+    #> tzcode source: internal
+    #> 
     #> attached base packages:
     #> [1] stats     graphics  grDevices utils     datasets  methods   base     
     #> 
     #> other attached packages:
-    #>  [1] RSQLite_2.3.0   lubridate_1.9.2 forcats_1.0.0   stringr_1.5.0  
-    #>  [5] dplyr_1.0.10    purrr_1.0.1     readr_2.1.4     tidyr_1.3.0    
-    #>  [9] tibble_3.2.0    ggplot2_3.4.1   tidyverse_2.0.0 knitr_1.42     
+    #>  [1] RSQLite_2.3.1   lubridate_1.9.3 forcats_1.0.0   stringr_1.5.0  
+    #>  [5] dplyr_1.1.3     purrr_1.0.2     readr_2.1.4     tidyr_1.3.0    
+    #>  [9] tibble_3.2.1    ggplot2_3.4.4   tidyverse_2.0.0 knitr_1.44     
     #> 
     #> loaded via a namespace (and not attached):
-    #>  [1] highr_0.10       pillar_1.9.0     compiler_4.2.2   tools_4.2.2     
-    #>  [5] bit_4.0.5        digest_0.6.31    memoise_2.0.1    timechange_0.2.0
-    #>  [9] evaluate_0.20    lifecycle_1.0.3  gtable_0.3.1     pkgconfig_2.0.3 
-    #> [13] rlang_1.0.6      cli_3.4.1        DBI_1.1.3        rstudioapi_0.14 
-    #> [17] yaml_2.3.7       xfun_0.37        fastmap_1.1.1    withr_2.5.1     
-    #> [21] generics_0.1.3   vctrs_0.5.2      hms_1.1.2        bit64_4.0.5     
-    #> [25] grid_4.2.2       tidyselect_1.2.0 glue_1.6.2       R6_2.5.1        
-    #> [29] fansi_1.0.3      rmarkdown_2.20   blob_1.2.3       tzdb_0.3.0      
-    #> [33] magrittr_2.0.3   scales_1.2.1     htmltools_0.5.4  ellipsis_0.3.2  
-    #> [37] colorspace_2.0-3 utf8_1.2.3       stringi_1.7.12   munsell_0.5.0   
-    #> [41] cachem_1.0.7
+    #>  [1] bit_4.0.5         gtable_0.3.4      compiler_4.3.1    tidyselect_1.2.0 
+    #>  [5] blob_1.2.4        scales_1.2.1      yaml_2.3.7        fastmap_1.1.1    
+    #>  [9] R6_2.5.1          generics_0.1.3    munsell_0.5.0     DBI_1.1.3        
+    #> [13] pillar_1.9.0      tzdb_0.4.0        rlang_1.1.1       utf8_1.2.3       
+    #> [17] cachem_1.0.8      stringi_1.7.12    xfun_0.40         bit64_4.0.5      
+    #> [21] memoise_2.0.1     timechange_0.2.0  cli_3.6.1         withr_2.5.1      
+    #> [25] magrittr_2.0.3    digest_0.6.33     grid_4.3.1        rstudioapi_0.15.0
+    #> [29] hms_1.1.3         lifecycle_1.0.3   vctrs_0.6.4       evaluate_0.22    
+    #> [33] glue_1.6.2        fansi_1.0.5       colorspace_2.1-0  rmarkdown_2.25   
+    #> [37] tools_4.3.1       pkgconfig_2.0.3   htmltools_0.5.6.1
 
 ## How to learn more after the workshop?
 
