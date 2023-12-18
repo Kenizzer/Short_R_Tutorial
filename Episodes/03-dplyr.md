@@ -1,4 +1,4 @@
-Manipulating, analyzing and exporting data with tidyverse
+Manipulating, analyzing and reshaping data with tidyverse
 ================
 Episode created by: Data Carpentry contributors with edits from Joel
 Swift (KU)
