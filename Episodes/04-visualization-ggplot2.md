@@ -27,11 +27,23 @@ the **`tidyverse`** package.
 library(tidyverse)
 ```
 
-If not still in the workspace, load the data we saved in the previous
-lesson.
+Reload the survey data and format it for easier plotting
 
 ``` r
-surveys_complete <- read_csv("data/surveys_complete.csv")
+surveys <- read_csv("data_raw/portal_data_joined.csv")
+surveys_complete <- surveys %>%
+  filter(!is.na(weight),           # remove missing weight
+         !is.na(hindfoot_length),  # remove missing hindfoot_length
+         !is.na(sex))                # remove missing sex
+
+## Extract the most common species_id
+species_counts <- surveys_complete %>%
+  count(species_id) %>%
+  filter(n >= 50)
+
+## Only keep the most common species
+surveys_complete <- surveys_complete %>%
+  filter(species_id %in% species_counts$species_id)
 ```
 
 ## Plotting with **`ggplot2`**
