@@ -1,0 +1,13 @@
+# One up
+- Liked how the workshop started from the very basics
+- Learned a ton; exponentially increased my knowledge and comfortability with the program.
+- It was nice to be able to learn how to organize and use data in a different program aside from Excel. I feel like learning how to make the graphs and how to work with them was the best part of this course.
+
+
+# One down
+- Some of the dplyr functions need to be explained a little more clearly
+- A lot of information in one day
+- We were given so much information during this course. This made it a bit hard to remember exactly everything we just learned. Maybe split the course up into two days.
+
+# General/additional thoughts
+- I would maybe split this workshop into two separate days. It was a lot to learn in 6 hours. Splitting it up might make future people retain the skills more that they learned in this course.
